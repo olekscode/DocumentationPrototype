@@ -28,13 +28,18 @@ DocumentationBrowser class >> defaultTitle [
 	^ 'Documentation Browser'
 ]
 
+{ #category : #documentation }
+DocumentationBrowser class >> documentation [
+  ^ 'pharo-local/iceberg/olekscode/DocumentationPrototype/README.md'
+
+]
+
 { #category : #initialization }
 DocumentationBrowser >> initializePresenters [
 
 	text := self newText.
 	
 	contents ifNotNil: [ 
-		contents inspect.
 		text text: contents ]
 ]
 
