@@ -29,6 +29,8 @@ If you are new to baselines and Metacello, check out the [Baselines](https://git
 
 ## How to use it?
 
+### Adding documentation to classes
+
 Add a class side method to any of your classes specifying the path to a documentation file or a URL to a raw Markdown documentation. For example:
 
 ```Smalltalk
@@ -40,5 +42,26 @@ DocumentationBrowser class >> documentation
 AILinearRegression class >> documentation
   ^ 'https://raw.githubusercontent.com/pharo-ai/linear-models-posts/master/understanding-linear-regression.md'
 ```
+
+### Adding documentation to methods
+
+You can also add documentation to specific methods using a pragma:
+
+```Smalltalk
+AIKMeans >> fit: aCollectionOfPoints
+  <documentation: 'https://raw.githubusercontent.com/pharo-ai/wiki/master/wiki/Tutorials/clustering-simple-example.md'>
+
+	aCollectionOfPoints ifEmpty: [ ^ self ].
+
+	timesToRun timesRepeat: [ self run: aCollectionOfPoints ].
+
+	"We keep the best centroids after running the algo n-times"
+	centroids := bestCentroids.
+	self assignClusterToPoints: aCollectionOfPoints
+```
+
+If method documentation is not specified, then class documentation will be displayed.
+
+### Browsing documentation
 
 Then right-click on that class or any method in it and click on `Browse documentation`.
