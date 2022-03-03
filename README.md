@@ -65,3 +65,7 @@ If method documentation is not specified, then class documentation will be displ
 ### Browsing documentation
 
 Then right-click on that class or any method in it and click on `Browse documentation`.
+
+![](img/menuClass.png)
+![](img/menuMethod.png)
+![](img/browseDocumentation.png)
