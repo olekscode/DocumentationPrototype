@@ -1,0 +1,14 @@
+SmalltalkCISpec {
+  #loading : [
+    SCIMetacelloLoadSpec {
+      #baseline : 'DocumentationPrototype',
+      #directory : 'src',
+      #platforms : [ #pharo ]
+    }
+  ],
+  #testing : {
+    #coverage : {
+      #classes : [ #DocumentationPrototype, #'DocumentationPrototype class' ]
+    }
+  }
+}
