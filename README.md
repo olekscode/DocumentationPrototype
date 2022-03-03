@@ -49,15 +49,15 @@ You can also add documentation to specific methods using a pragma:
 
 ```Smalltalk
 AIKMeans >> fit: aCollectionOfPoints
-  <documentation: 'https://raw.githubusercontent.com/pharo-ai/wiki/master/wiki/Tutorials/clustering-simple-example.md'>
+   <documentation: 'https://raw.githubusercontent.com/pharo-ai/wiki/master/wiki/Tutorials/clustering-simple-example.md'>
 
-	aCollectionOfPoints ifEmpty: [ ^ self ].
+   aCollectionOfPoints ifEmpty: [ ^ self ].
 
-	timesToRun timesRepeat: [ self run: aCollectionOfPoints ].
+   timesToRun timesRepeat: [ self run: aCollectionOfPoints ].
 
-	"We keep the best centroids after running the algo n-times"
-	centroids := bestCentroids.
-	self assignClusterToPoints: aCollectionOfPoints
+   "We keep the best centroids after running the algo n-times"
+   centroids := bestCentroids.
+   self assignClusterToPoints: aCollectionOfPoints
 ```
 
 If method documentation is not specified, then class documentation will be displayed.
