@@ -10,5 +10,6 @@ BaselineOfDocumentationPrototype >> baseline: spec [
 	spec for: #common do: [
 		"Packages"
 		spec 
-			package: 'DocumentationPrototype' ].
+			package: 'DocumentationPrototype';
+			package: 'DocumentationPrototype-Tests' with: [ spec requires: #('DocumentationPrototype') ]. ].
 ]
