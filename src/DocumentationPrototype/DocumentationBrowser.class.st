@@ -36,11 +36,11 @@ DocumentationBrowser class >> documentation [
 
 { #category : #initialization }
 DocumentationBrowser >> initializePresenters [
-
-	text := self newText.
+		
+	text := self newMorph.
 	
 	contents ifNotNil: [ 
-		text text: contents ]
+		self parseAndShowRichText: contents ]
 ]
 
 { #category : #initialization }
@@ -50,6 +50,18 @@ DocumentationBrowser >> initializeWindow: aWindowPresenter [
 	aWindowPresenter
 		title: self class defaultTitle;
 		initialExtent: self class defaultExtent
+]
+
+{ #category : #parsing }
+DocumentationBrowser >> parseAndShowRichText: aMicrodownString [
+
+	| richText |
+	richText := MicRichTextComposer asRichText: aMicrodownString.
+	
+	text morph: (RubScrolledTextMorph new 
+		setText: richText;
+		in: [ :this | this textArea readOnly: true ];
+		yourself).
 ]
 
 { #category : #initialization }
